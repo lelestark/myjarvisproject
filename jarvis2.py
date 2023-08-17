@@ -1,19 +1,12 @@
-import pyttsx3
 from screeninfo import get_monitors
-import time
 import threading
 from datetime import datetime
 import re
-import requests
-from dateutil.parser import parse
-import pygetwindow as gw
 import asyncio
 import random
-import json
-
-
+from stark_studios_updated import main_window
 from voice_assistant import speak, listen, wishMe, get_random_thanks, wake_up_word_detected
-from task_manager import load_tasks_from_file, add_task_to_list, remind_upcoming_tasks, capture_shopping_list_item, add_item_to_shopping_list, view_shopping_list, initialize_shopping_list, mark_task_as_completed, view_task_list, add_standard_answer, show_standard_answer, copy_answer_by_voice
+from task_manager import load_tasks_from_file, add_task_to_list, remind_upcoming_tasks, capture_shopping_list_item, add_item_to_shopping_list, view_shopping_list, initialize_shopping_list, mark_task_as_completed, view_task_list, add_standard_answer, show_standard_answer
 from web_navigation import open_website, search_on_google, noticias, search_images
 from system_utilities import move_window_to_monitor, switch_application, test_google_speech_api_latency, get_current_date, get_current_day_of_week, turn_off_computer, open_program, initialize_notes_file, capture_note_idea, save_note_to_file, get_notes_by_category, view_notes
 from ai import bing, gpt
@@ -44,19 +37,21 @@ def main():
 
         if detected_word:
             if detected_word == 'jarvis':
-                wishMe()
+                #wishMe()
                 print("Wake-up word detectada: Jarvis. Modo de escuta ativado.")
             elif detected_word == 'friday':
                 gpt()
             elif detected_word == 'edith':
                 asyncio.run(bing())
 
-            while detected_word == 'jarvis':  # Loop de escuta infinito para Jarvis
-                # Seu código de processamento de comandos aqui ...
-
+            while detected_word == 'jarvis':  
                 command = listen().lower()
 
-                if "dispensado" in command:
+                if "gerenciador" in command:
+                    speak("Abrindo o gerenciador do estúdio de impressão e pintura.")
+                    main_window()  # Chame a função para abrir a interface gráfica
+
+                elif "dispensado" in command:
                     print("Modo de escuta desativado. Aguardando wake-up word...")
                     speak("Até logo senhor! Entrando em modo de espera. Precisando de algo, é só chamar.")
                     break
@@ -105,10 +100,6 @@ def main():
 
                 elif "mostrar respostas" in command:
                     show_standard_answer()
-
-                if "copiar resposta para" in command():
-                    question_keyword = user_command.split("para")[-1].strip()
-                    copy_answer_by_voice(question_keyword)
 
                 if "setar timer" in command:
                     pass

@@ -205,7 +205,7 @@ def view_task_list(tasks):
 def send_sms(body, to_number):
     # Suas credenciais do Twilio
     account_sid = 'ACe98a2fe0dcc615ad2dfd9bb17668e731'
-    auth_token = '23b0a433d7c183ce4af7e35431398e3e'
+    auth_token = '981d471419b53cbc96b35b1a1f27ec15'
     twilio_number = '+18787897745'  # Número de telefone fornecido pelo Twilio
     # Inicialize o cliente do Twilio
     client = Client(account_sid, auth_token)

@@ -6,7 +6,7 @@ import random
 import re
 
 # Constants
-WAKE_WORD = ["Ei Jarvis", "Hey Jarvis", "Oi Jarvis", "Rei Jarvis"]
+WAKE_WORD = ["Ei Jarvis", "Hey Jarvis", "Oi Jarvis", "Rei Jarvis", "Rei Jar", "Hey Jar"]
 WAKE_WORD_FRIDAY = ["Ei Friday", "Hey Friday", "Oi Friday", "Rei Friday"]
 WAKE_WORD_EDITH = ["Ei Edith", "Hey Edith", "Oi Edith", "Rei Edith", "Ei Edit", "Hey Edit", "Oi Edit", "Rei Edit"]
 waiting_phrases = [
@@ -24,7 +24,7 @@ waiting_phrases = [
     "Sistemas a todo vapor! Qual é a missão?",
     "Em suas ordens! Mas sem pressa, estou aproveitando um café virtual.",
     "O que faremos hoje? Sem ideias? Eu também!",
-    "Seu assistente está pronta! E não, não estou fazendo nada interessante aqui.",
+    "Seu assistente está pronto! E não, não estou fazendo nada interessante aqui.",
     "Sou todo ouvidos! Mas cuidado, sou sensível a comandos complicados.",
     "Aguardando instruções. Se for divertido, melhor ainda!",
     "Pronto para qualquer coisa! Bem... quase qualquer coisa.",

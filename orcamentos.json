@@ -1,0 +1,15 @@
+[
+    {
+        "cliente": {
+            "nome": "cliente teste",
+            "telefone": "34996739888",
+            "email": "starkarmas13@gmail.com",
+            "social": "@stark.estudios"
+        },
+        "descricao_projeto": "Descri\u00e7\u00e3o detalhada do projeto",
+        "resin_cost": 498.0793600000001,
+        "painting_and_finishing_cost": 274.0,
+        "valor_venda": 772.0793600000002,
+        "status": "Pendente"
+    }
+]

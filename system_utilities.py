@@ -113,7 +113,7 @@ def extract_action_and_city(command):
     return None, None
 
 def clima(city_name):
-    api_key = "888df64ddd77794f931b604710c82cc5"
+    api_key = "59c4eac28e576389e19399c74291bd40"
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name + "&units=metric&lang=pt"
     response = requests.get(complete_url)

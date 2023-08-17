@@ -3,8 +3,9 @@ from EdgeGPT.EdgeGPT import Chatbot, ConversationStyle
 from voice_assistant import speak, listen
 import re
 import openai
+from dotenv import load_dotenv
 
-openai.api_key = "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" 
+load_dotenv()
 
 def get_command(assistant_name):
     speak(f"Sistemas operacionais de {assistant_name} online. Aguardando comando.")
@@ -25,6 +26,7 @@ async def bing():
             await bot.close()
 
 def gpt(initial_prompt=None):
+    openai.api_key = os.environ["OPENAI_API_KEY"]
     first_call = True  # Adicionar uma variável para rastrear se esta é a primeira chamada
 
     while True:  # Loop de conversação infinito
@@ -49,8 +51,8 @@ def gpt(initial_prompt=None):
             temperature=0.5,
             max_tokens=100,
             top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
+            frequency_penalty=0.25,
+            presence_penalty=0.25,
             n=1,
             stop=["\nUser:"],
         )
